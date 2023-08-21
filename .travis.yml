@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - 2.7
+
+addons:
+  coverity_scan:
+    project:
+      name: "cov_test"
+      description: "i jsut run a test case"
+    notification_email: hamid.mansha@travis-ci.org
+    build_command_prepend: "bundle install"
+    build_command: "bundle exec rake test"
+    branch_pattern: main
+
+script:
+  - bundle install
+  - bundle exec rake test
